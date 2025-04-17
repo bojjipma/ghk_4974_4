@@ -28,11 +28,8 @@ export const App = () => {
   const submit = () => {
     setLoading(true);
 
-    sendDataToGA({
-      carousel: '',
-      subscription: selected === 'На 1 месяц' ? 'month' : 'year',
-    }).then(() => {
-      // LS.setItem(LSKeys.ShowThx, true);
+    sendDataToGA().then(() => {
+      LS.setItem(LSKeys.ShowThx, true);
       setThx(true);
       setLoading(false);
     });
